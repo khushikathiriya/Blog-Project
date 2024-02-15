@@ -1,0 +1,71 @@
+
+<%- include('../header') %>
+
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content" >
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                           
+                            
+                            <div class="col-lg-6" style="margin-left: 350px; width: 100%;">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>Offer Data</strong> 
+                                    </div>
+                                    <div class="card-body card-block">
+                                        <form action="/admin/offer/editofferdata" method="post" class="form-horizontal">
+                                            <input type="hidden" value="<%= offerdata.id %>" name="Editid">
+                                            <div class="row form-group">
+                                               
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Enter Icon Name :- </label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="text-input" name="icon" placeholder="Enter Icon Name" class="form-control" value="<%= offerdata.icon %>">
+                                                </div>
+                                            </div>
+
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Enter Title Name :- </label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="text-input" name="title" placeholder="Enter Title Name" class="form-control" value="<%= offerdata.title %>">
+                                                    
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="textarea-input" class=" form-control-label">Description :-</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <textarea name="description" id="textarea-input" rows="3" placeholder="Content..." class="form-control"><%= offerdata.description %></textarea>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="card-footer">
+                                            <button type="submit" class="btn btn-primary btn-sm">
+                                                <i class="fa fa-dot-circle-o"></i> Submit
+                                            </button>
+                                            <button type="reset" class="btn btn-danger btn-sm">
+                                                <i class="fa fa-ban"></i> Reset
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                      
+                            
+                            
+                        </div>
+                        
+
+                        <%- include('../footer') %>

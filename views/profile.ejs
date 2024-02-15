@@ -1,0 +1,103 @@
+<%- include('header') %>
+
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content" >
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                           
+                            
+                            <div class="col-lg-6" style="margin-left: 350px; width: 100%;">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>Admin profile</strong> 
+                                    </div>
+                                    <div class="card-body card-block">
+                                        <form action="/admin/insertadmindata" method="post" enctype="multipart/form-data" class="form-horizontal" style="width: 100%;">
+
+                                            <div class="row form-group">
+                                                <div class="col-12 col-md-9">
+                                                    <!-- <input type="file" id="file-input" name="adminImages" class="form-control-file"> -->
+                                                    <img src="<%= locals.user.adminImages %>" height="100px" style="margin-left: 50px;">
+                                                </div>
+                                            </div><br><br>
+
+
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Enter Frist Name :- </label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="text-input" name="fname" placeholder="Enter Frist Name" class="form-control" value="<%= locals.user.name %> ">
+                                                </div>
+                                            </div>
+
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="text-input" class=" form-control-label">Enter Last Name :- </label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="text" id="text-input" name="lname" placeholder="Enter Last Name" class="form-control" value="<%= locals.user.name %>">
+                                                    
+                                                </div>
+                                            </div>
+
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="email-input" class=" form-control-label">Enter Your Email :-</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="email" id="email-input" name="email" placeholder="Enter Email" class="form-control" value="<%= locals.user.email %>">
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class=" form-control-label">Gender :-</label>
+                                                </div>
+                                                <div class="col col-md-9">
+                                                    <div class="form-check-inline form-check">
+                                                        <label for="inline-radio1" class="form-check-label ">
+                                                            <input type="radio" id="inline-radio1" name="gender" value="male" class="form-check-input"  <% if(locals.user.gender=='male') { %> <%= 'checked' %> <% } %>>Male
+                                                        </label>
+                                                        <label for="inline-radio2" class="form-check-label ">
+                                                            <input type="radio" id="inline-radio2" name="gender" value="female" class="form-check-input"  <% if(locals.user.gender=='female') { %> <%= 'checked' %> <% } %>>Female
+                                                        </label>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
+                                            
+                                            
+                                            <!-- <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="file-multiple-input" class=" form-control-label">Multiple File input</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="file" id="file-multiple-input" name="file-multiple-input" multiple="" class="form-control-file">
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                        <div class="card-footer">
+                                            <button type="button" class="btn btn-primary btn-sm">
+                                                <i class="fa fa-dot-circle-o"></i> <a
+                                                    href="/admin/updateadmindata/<%= locals.user._id%>" class="text-white">Edit
+                                                    Profile</a>
+                                            </button>
+                                            <button type="reset" class="btn btn-danger btn-sm">
+                                                <i class="fa fa-ban"></i> Reset
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                      
+                            
+                            
+                        </div>
+                        
+
+                        <%- include('footer') %>
